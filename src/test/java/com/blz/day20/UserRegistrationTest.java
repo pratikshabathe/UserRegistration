@@ -127,5 +127,45 @@ public class UserRegistrationTest {
 	            System.out.println("Invalid Password Rule2 because :- " + e);
 	        }
 	    }
+	    
+	    @Test
+	    public void givenPasswordRule3_WhenValid_ShouldReturnsTrue() {
+	        try {
+	            Assert.assertTrue(userRegistration.validPasswordRule3("Patuu045"));
+	            System.out.println("Password Rule3 is valid");
+	        }catch (InvalidPasswordRule3Exception e) {
+	            System.out.println("Invalid Password Rule3 because :- " + e);
+	        }
+	    }
+
+	    @Test
+	    public void givenPasswordRule3_WhenInValid_ShouldReturnsFalse() {
+	        try {
+	            Assert.assertTrue(userRegistration.validPasswordRule3("Patuu04"));
+	            System.out.println("Password Rule3 is valid");
+	        }catch (InvalidPasswordRule3Exception e) {
+	            System.out.println("Invalid Password Rule3 because :- " + e);
+	        }
+	    }
+
+	    @Test
+	    public void givenPasswordRule4_WhenValid_ShouldReturnsTrue() {
+	        try {
+	            Assert.assertTrue(userRegistration.validPasswordRule4("Patuu045"));
+	            System.out.println("Password Rule4 is valid");
+	        }catch (InvalidPasswordRule4Exception e) {
+	            System.out.println("Invalid Password Rule3 because :- " + e);
+	        }
+	    }
+
+	    @Test
+	    public void givenPasswordRule4_WhenInValid_ShouldReturnsFalse() {
+	    	 try {
+		            Assert.assertTrue(userRegistration.validPasswordRule4("Patuu555"));
+		            System.out.println("Password Rule4 is valid");
+		        }catch (InvalidPasswordRule4Exception e) {
+		            System.out.println("Invalid Password Rule4 because :- " + e);
+		        }
+	    }
 
 }

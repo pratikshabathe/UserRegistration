@@ -6,6 +6,8 @@ import java.util.regex.Pattern;
 
 public class UserRegistration {
 
+	private static CharSequence passwordRule3;
+
 	public static boolean validFirstName(String name) throws  InvalidFirstNameException {
         String regex = "^[A-Z]{1}[a-z]{2,}$";
         Pattern pattern = Pattern.compile(regex);
@@ -19,7 +21,6 @@ public class UserRegistration {
         else {
             return true;
         }
-
     }
 
     public static boolean validLastName(String name) throws InvalidLastNameException {
@@ -98,5 +99,33 @@ public class UserRegistration {
         }
     }
     
+    public static boolean validPasswordRule3(String passwordRule3) throws InvalidPasswordRule3Exception {
+        String regex = "^(?=.*[A-Z])(?=.*[0-9])([a-zA-Z0-9@._-]).{8,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(passwordRule3);
+        boolean result = matcher.matches();
+        System.out.println(result);
 
+        if (!result) {
+            throw new InvalidPasswordRule3Exception("Password must have atleast one numeric number");
+        }
+        else {
+            return true;
+        }
+    }
+
+    public static boolean validPasswordRule4(String passwordRule4) throws InvalidPasswordRule4Exception {
+        String regex = "^[?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&*()-+=])([a-zA-Z0-9@._-]).{8,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(passwordRule4);
+        boolean result = matcher.matches();
+        System.out.println(result);
+
+        if (!result) {
+            throw new InvalidPasswordRule4Exception("Password must has exactly one special charecrter");
+        }
+        else {
+            return true;
+        }
+    }
 }

@@ -6,8 +6,8 @@ public class Main {
 
 	public static void welcome(){
         System.out.println("Welcome to User Registration System Problem");
-    }
-    public static void main(String[] args) throws InvalidFirstNameException, InvalidLastNameException, InvalidEmailException, InvalidMobileNumberException, InvalidPsswordRule1Exception, InvalidPasswordRule2Exception  {
+	}
+    public static void main(String[] args) throws InvalidFirstNameException, InvalidLastNameException, InvalidEmailException, InvalidMobileNumberException, InvalidPsswordRule1Exception, InvalidPasswordRule2Exception, InvalidPasswordRule3Exception, InvalidPasswordRule4Exception  {
         welcome(); //calling static method
         UserRegistration user = new UserRegistration();
         Scanner scanner = new Scanner(System.in);
@@ -31,7 +31,12 @@ public class Main {
             case 6:
                 UserRegistration.validPasswordRule2("Patuu.05");
                 break;
- 
-        }
+            case 7:
+				UserRegistration.validPasswordRule3("Patuu105");
+                break;
+            case 8:
+                UserRegistration.validPasswordRule4("Patuu@55");
+                break;
+			}
     }
 }
