@@ -43,19 +43,19 @@ public class UserRegistrationTest {
 
     @Test
     public void givenMobileNo_WhenValid_ShouldReturnsTrue() {
-        boolean result = userRegistration.validMobileNumber("91 9916519802");
+        boolean result = userRegistration.validMobileNumber("91 9965328902");
         Assertions.assertTrue(result);
     }
 
     @Test
     public void givenMobileNo_WhenInValid_ShouldReturnsFalse() {
-        boolean result = userRegistration.validMobileNumber("919916519802");
+        boolean result = userRegistration.validMobileNumber("919965328902");
         Assertions.assertFalse(result);
     }
 
     @Test
     public void givenPasswordRule1_WhenValid_ShouldReturnsTrue() {
-        boolean result = userRegistration.validPasswordRule1("Patuu005");
+        boolean result = userRegistration.validPasswordRule1("Patuu045");
         Assertions.assertTrue(result);
     }
 
@@ -73,7 +73,7 @@ public class UserRegistrationTest {
 
     @Test
     public void givenPasswordRule2_WhenInValid_ShouldReturnsFalse() {
-        boolean result = userRegistration.validPasswordRule2("Patuu.45");
+        boolean result = userRegistration.validPasswordRule2("Patuu.55");
         Assertions.assertFalse(result);
     }
 
